@@ -1,0 +1,39 @@
+﻿@model List<Person>
+
+
+<table>
+    <tr>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>DOB</td>
+    </tr>
+
+    @foreach (var person in Model)
+    {
+        <tr>
+            <td>@person.FirstName</td>
+            <td>@person.LastName</td>
+            <td>@person.Dob</td>
+
+        </tr>
+
+    }
+
+</table>
+
+<form asp-action="AddPerson" method="post">
+    <label for="FirstName">First Name</label>
+    <input type="text" name="FirstName" value="" />
+    <br />
+
+    <label for="LastName">Last Name</label>
+    <input type="text" name="LastName" value="" />
+    <br />
+
+    <label for="Dob">DOB</label>
+    <input type="date" name="Dob" value="" />
+    <br />
+
+    <input type="submit" name="submit" value="submit" />
+
+</form>
